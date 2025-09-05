@@ -1,0 +1,15 @@
+{
+  "chips": ["todos", "realismo", "blackwork", "fino-traco", "exclusivos", "digital", "coverup"],
+  "items": [
+    {"src":"img/trabalho-costas.png","alt":"fechamento costas","estilo":"realismo"},
+    {"src":"img/tattoo-pesinho.png","alt":"pesinho","estilo":"fino-traco"},
+    {"src":"img/reforma-depois.png","alt":"reforma depois","estilo":"coverup"},
+    {"src":"img/reforma-antes.png","alt":"reforma antes","estilo":"coverup"},
+    {"src":"img/tattoo-dog.png","alt":"dog","estilo":"realismo"},
+    {"src":"img/fechamento-tattoo.png","alt":"fechamento","estilo":"realismo"},
+    {"src":"img/tattoo-coruja.png","alt":"coruja","estilo":"realismo"},
+    {"src":"img/carpa-digital.png","alt":"carpa digital","estilo":"digital"},
+    {"src":"img/carranca-digital.png","alt":"carranca digital","estilo":"digital"},
+    {"src":"img/logo.png","alt":"marca","estilo":"exclusivos"}
+  ]
+}

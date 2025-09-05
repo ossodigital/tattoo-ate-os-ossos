@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Admin Upload — tattoo ate os ossos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Arial;margin:20px;background:#0e0f11;color:#e9e9ea}
+    .wrap{max-width:820px;margin:auto}
+    fieldset{border:1px solid #2a2f39;border-radius:10px;padding:12px;margin-bottom:16px;background:#14161a}
+    label{display:block;margin:8px 0 6px;color:#b9bcc2;font-size:14px}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #2a2f39;background:#0f1116;color:#e9e9ea}
+    button{margin-top:10px;padding:12px 16px;border-radius:999px;border:0;background:linear-gradient(90deg,#ff7a1a,#ffbf3c);color:#14161a;font-weight:800;cursor:pointer}
+    .ok{margin-top:8px;color:#a2ffcf}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .thumb{border:1px solid #2a2f39;border-radius:8px;overflow:hidden;background:#101216}
+    .thumb img{width:100%;height:120px;object-fit:cover;display:block}
+    @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>upload de imagens</h1>
+    <form id="up" enctype="multipart/form-data">
+      <fieldset>
+        <label>arquivos (png/jpg) — ate 12</label>
+        <input type="file" name="files" multiple accept="image/*" required>
+
+        <label>tipo</label>
+        <select name="tipo">
+          <option value="portfolio">portfolio (tattoo)</option>
+          <option value="piercing">piercing (jennyfer)</option>
+        </select>
+
+        <label>estilo (para filtro do portfolio)</label>
+        <select name="estilo">
+          <option value="">(nenhum)</option>
+          <option>realismo</option>
+          <option>blackwork</option>
+          <option>fino-traco</option>
+          <option>exclusivos</option>
+          <option>digital</option>
+          <option>coverup</option>
+        </select>
+
+        <label>descricao (opcional)</label>
+        <textarea name="descricao" rows="2" placeholder="texto curto"></textarea>
+
+        <label style="display:flex;align-items:center;gap:8px;margin-top:10px">
+          <input type="checkbox" name="add_to_gallery" checked> adicionar automaticamente na galeria
+        </label>
+
+        <button type="submit">enviar</button>
+        <div id="ok" class="ok" style="display:none">enviado!</div>
+      </fieldset>
+    </form>
+
+    <h2>ultimos uploads</h2>
+    <div id="grid" class="grid"></div>
+  </div>
+
+  <script>
+    const f=document.getElementById('up'), ok=document.getElementById('ok'), grid=document.getElementById('grid');
+    async function loadMedia(){
+      const res=await fetch('/media'); const j=await res.json().catch(()=>({items:[]}));
+      grid.innerHTML = (j.items||[]).slice(-12).reverse().map(m=>`
+        <div class="thumb"><img src="${m.url}" alt="${m.descricao||m.estilo||m.tipo}"></div>
+      `).join('');
+    }
+    f.addEventListener('submit', async e=>{
+      e.preventDefault();
+      const fd = new FormData(f);
+      const res = await fetch('/upload', { method:'POST', body: fd });
+      const out = await res.json().catch(()=>({ok:false}));
+      if(out.ok){ ok.style.display='block'; f.reset(); loadMedia(); }
+      else alert('falha no upload');
+    });
+    loadMedia();
+  </script>
+</body>
+</html>

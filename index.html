@@ -1,15 +1,13 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br"><head>
   <meta charset="utf-8">
   <title>Tattoo ate os ossos — studio vila zelina</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Tattoo ate os ossos — realismo, blackwork, exclusivos. Piercing com jennyfer. Vila Zelina - Sao Paulo.">
-  <link rel="icon" href="img/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-01.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box} html{scroll-behavior:smooth}
-    :root{--bg:#0e0f11;--bg-2:#14161a;--bg-3:#1a1d23;--ink:#e9e9ea;--ink-2:#b9bcc2;--brand-a:#ff7a1a;--brand-b:#ffbf3c;--stroke:#252830;--shadow:0 12px 36px rgba(0,0,0,.35);--radius:16px;--w:min(1180px,92vw)}
+    :root{--bg:#0e0f11;--bg-2:#14161a;--bg-3:#1a1d23;--ink:#e9e9ea;--ink-2:#b9bcc2;--brand-a:#d37430;--brand-b:#ffbf3c;--stroke:#252830;--shadow:0 12px 36px rgba(0,0,0,.35);--radius:16px;--w:min(1180px,92vw)}
     body{margin:0;color:var(--ink);background:
       radial-gradient(1200px 600px at 15% -10%, #1f2230 0%, rgba(31,34,48,0) 60%),
       radial-gradient(1200px 800px at 110% 10%, #1b1f2a 0%, rgba(27,31,42,0) 60%),
@@ -30,7 +28,7 @@
     /* header */
     .site-header{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke);display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-    .brand-logo{width:40px;height:40px;object-fit:contain;border-radius:8px}
+    .brand-logo{width:40px;height:auto;object-fit:contain;border-radius:8px}
     .brand-text{font-weight:800;text-transform:lowercase}
     .site-nav{margin-left:auto;display:flex;align-items:center}
     .nav-toggle{display:none;font-size:22px;line-height:1;background:transparent;color:var(--ink);border:1px solid var(--stroke);border-radius:8px;padding:6px 10px}
@@ -54,7 +52,7 @@
       radial-gradient(800px 300px at 80% 0%, rgba(255,191,60,.08), transparent 60%),
       linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.60)); filter: blur(22px) saturate(120%)}
 
-    /* cards */
+    /* cards básicos */
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .card{background:var(--bg-3);border:1px solid var(--stroke);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
     .card-img{width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -71,6 +69,37 @@
     .video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
     .video{position:relative;padding-top:56.25%;border:1px solid var(--stroke);border-radius:12px;overflow:hidden;background:#101216}
     .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    /* ÁLBUNS (Mockups / Sticks / Flash / Projeto) */
+    .section-cards{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(240px,1fr));
+      gap:20px;
+    }
+    @media (max-width:1200px){ .section-cards{grid-template-columns:repeat(3, minmax(220px,1fr));} }
+    @media (max-width:900px) { .section-cards{grid-template-columns:repeat(2, minmax(220px,1fr));} }
+    @media (max-width:600px) { .section-cards{grid-template-columns:1fr;} }
+
+    .card-square{
+      background:var(--bg-3);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:12px 12px 16px;
+      display:flex;
+      flex-direction:column;
+      min-height:320px;
+    }
+    .card-square .card-img{
+      width:100%;
+      aspect-ratio:16/12;
+      object-fit:contain !important;     /* evita “mug” gigante */
+      background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);
+      border-radius:12px;
+    }
+    .card-square .card-title{margin-top:10px}
+    .card-square .card-sub{margin:0 0 12px;color:var(--ink-2)}
+    .btn-row{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
 
     /* forms */
     .lead-form{margin-top:16px;text-align:left}
@@ -118,8 +147,9 @@
   <!-- header -->
   <header class="site-header">
     <a href="#hero" class="brand">
-      <img src="img/logo.png" alt="logo tattoo ate os ossos" class="brand-logo">
-      <span class="brand-text">tattoo ate os ossos</span>
+      <img src="img/logo/logo-01.png" alt="logo-01" class="brand-logo"{ border-radius:50%; }>
+
+      <span class="brand-text"></span>
     </a>
     <nav class="site-nav" aria-label="principal">
       <button class="nav-toggle" aria-expanded="false" aria-label="abrir menu">☰</button>
@@ -130,6 +160,7 @@
         <li><a href="#trabalhos">trabalhos</a></li>
         <li><a href="#piercing">piercing</a></li>
         <li><a href="#videos">videos</a></li>
+        <li><a href="portfolio.html">portfólio</a></li>
         <li><a href="#cuidados">cuidados</a></li>
         <li><a href="#faqs">faqs</a></li>
         <li><a href="#anamnese">anamnese</a></li>
@@ -142,33 +173,38 @@
 
   <!-- hero -->
   <section id="hero" class="hero">
-    <div class="hero-inner">
-      <img src="img/logo.png" alt="logo tattoo ate os ossos" class="hero-logo">
-      <h1><span class="grad-title">TATTOO ATE OS OSSOS</span></h1>
-      <p class="hero-sub">estetica forte . <span class="hl-underline">realismo</span> . <span class="hl">blackwork</span> . exclusivos</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="https://wa.me/5511939369778" target="_blank" rel="noopener">agendar no whatsapp</a>
-        <a class="btn btn-ghost" href="https://instagram.com/tattooateosossos" target="_blank" rel="noopener">instagram</a>
-      </div>
-    </div>
-    <div class="hero-bg" aria-hidden="true"></div>
-  </section>
+  <div class="hero-logo-wrap">
+    <img src="img/logo/logo-preto.png" alt="logo tattoo ate os ossos" class="hero-logo">
+  </div>
+
+  <h1><span class="grad-title">TATTOO ATE OS OSSOS</span></h1>
+  <p class="hero-sub">
+    estetica forte · <span class="hl-underline">realismo</span> · 
+    <span class="hl">blackwork</span> · exclusivos
+  </p>
+
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="https://wa.me/5511939369778" target="_blank" rel="noopener">agendar no whatsapp</a>
+    <a class="btn btn-ghost" href="https://instagram.com/tattooateosossos" target="_blank" rel="noopener">instagram</a>
+  </div>
+</section>
+
 
   <!-- quem somos -->
   <section id="quem-somos" class="section section-contained">
     <div class="container">
       <h2 class="section-title">quem somos</h2>
-      <p class="lead">
-        Nos da <strong>Tattoo ate os ossos</strong> somos um estudio com o intuito de gerar
-        proposicoes incriveis em nome da tatuagem e do desenho, deixando voce
-        totalmente confortavel aqui. Eu, <strong>Coringa</strong>, e minha esposa
-        <strong>Jennyfer</strong>, somos anfitrioes da casa.
-      </p>
-      <p><strong>Coringa</strong> — tatuador especialista em realismo, blackwork e artes exclusivas.
-      <br><strong>15 anos consecutivos</strong> na Vila Zelina, Sao Paulo.</p>
-      <p><strong>Jennyfer</strong> — body piercer conceituada, com diferencial de atuar tambem na
-      area da saude. Queremos proporcionar uma historia incrivel pra voce aqui — so vir e eternizar.</p>
-    </div>
+      <h2>Bem-vindo ao Tattoo Até os Ossos</h2>
+      <div class="bio">
+  <p><strong>Tattoo Até os Ossos</strong> — estúdio referência em <em>realismo</em>, <em>blackwork</em> e <em>piercing profissional</em> em São Paulo. Mais de 15 anos criando <strong>arte exclusiva na pele</strong>, com técnica, segurança e estilo.</p>
+  
+  <p>Eu sou o <strong>Coringa</strong>, especialista em tatuagens autorais que unem emoção e identidade.  
+  Ao meu lado está a <strong>Jennyfer</strong>, body piercer com formação em saúde, que garante estética e cuidado em cada procedimento.</p>
+  
+  <p><strong>Nosso compromisso</strong> é eternizar sua história com arte de alto nível, em um espaço seguro e acolhedor.  
+  Venha viver sua experiência até os ossos. 💀🔥</p>
+</div>
+
   </section>
 
   <!-- equipe (slots de fotos) -->
@@ -177,7 +213,7 @@
       <h2 class="section-title">equipe</h2>
       <div class="cards">
         <article class="card">
-          <img src="img/coringa.png" alt="coringa tatuador" class="card-img">
+          <img src="img/profile/coringa.png" alt="coringa tatuador" class="card-img">
           <div class="card-body">
             <h3 class="card-title">coringa</h3>
             <p class="card-sub">tatuador residente</p>
@@ -185,7 +221,7 @@
           </div>
         </article>
         <article class="card">
-          <img src="img/jennyfer.png" alt="jennyfer piercer" class="card-img">
+          <img src="img/profile/jennyfer-nova.png" alt="jennyfer piercer" class="card-img">
           <div class="card-body">
             <h3 class="card-title">jennyfer pierce</h3>
             <p class="card-sub">seguranca e cuidados em saude</p>
@@ -196,27 +232,55 @@
     </div>
   </section>
 
-  <!-- destaques -->
-  <section id="destaques" class="section section-contained">
+  <!-- ÁLBUNS -->
+  <section id="albuns" class="section">
     <div class="container">
       <h2 class="section-title">destaques</h2>
-      <div class="cards">
-        <article class="card">
-          <img class="card-img" src="img/mockup-stick.png" alt="mockup pack">
-          <div class="card-body">
-            <h3 class="card-title">mockup exclusivo</h3>
-            <p class="card-sub">pack urbano para vitrine digital</p>
-            <a class="btn btn-ghost" href="#orcamento">pedir orcamento</a>
+
+      <div class="section-cards">
+        <article class="card-square">
+          <img class="card-img" src="img/mockups/mockup-blusa.png" alt="mockups">
+          <h3 class="card-title">mockups</h3>
+          <p class="card-sub">apresente sua arte no contexto real.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="portfolio.html?estilo=mockup">ver mockups</a>
+            <a class="btn btn-ghost" href="#orcamento">orçar</a>
           </div>
         </article>
-        <article class="card">
-          <img class="card-img" src="img/flash-ozzy.png" alt="flash ozzy">
-          <div class="card-body">
-            <h3 class="card-title">flash tattoo</h3>
-            <p class="card-sub">serie limitada — consulte disponibilidade</p>
+
+        <article class="card-square">
+          <img class="card-img" src="img/sticks/mockup-stick.png" alt="sticks">
+          <h3 class="card-title">sticks</h3>
+          <p class="card-sub">rótulos, adesivos e utilitários p/ estúdio.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="portfolio.html?estilo=sticks">ver sticks</a>
+            <a class="btn btn-ghost" href="#orcamento">orçar</a>
+          </div>
+        </article>
+
+        <article class="card-square">
+          <img class="card-img" src="img/flash/flash-ozzy-01.png" alt="flash tattoo">
+          <h3 class="card-title">flash tattoo</h3>
+          <p class="card-sub">série limitada — consulte disponibilidade.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="portfolio.html?estilo=flash">ver flash</a>
             <a class="btn btn-ghost" href="#orcamento">consultar</a>
           </div>
         </article>
+
+        <article class="card-square">
+          <img class="card-img" src="img/projetos/Carpa-digital.png" alt="projeto sétima arte">
+          <h3 class="card-title">projeto 7 arte</h3>
+          <p class="card-sub">linha artística especial / colaborações.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="portfolio.html?estilo=projetos">ver projeto</a>
+            <a class="btn btn-ghost" href="portfolio.html?estilo=perfil">perfil</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="btn-row" style="margin-top:18px">
+        <a class="btn btn-primary" href="portfolio.html">ver portfólio completo</a>
       </div>
     </div>
   </section>
@@ -225,8 +289,16 @@
   <section id="trabalhos" class="section">
     <div class="container">
       <h2 class="section-title">trabalhos</h2>
-      <p class="lead">selecionamos alguns projetos recentes de <span class="hl-underline">realismo</span> e <span class="hl">blackwork</span>.</p>
-      <div class="grid"></div>
+      <p class="lead">selecionamos alguns projetos recentes de 
+        <span class="hl-underline">realismo</span> e 
+        <span class="hl">blackwork</span>.
+      </p>
+
+      <div class="grid"><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div></div>
+
+      <div class="portfolio-link" style="margin-top:14px">
+        <a class="btn btn-primary" href="portfolio.html">ver portfólio completo</a>
+      </div>
     </div>
   </section>
 
@@ -235,17 +307,25 @@
     <div class="container">
       <h2 class="section-title">piercing — jennyfer</h2>
       <p class="lead">seguranca, assepsia e acompanhamento. confira alguns procedimentos.</p>
-      <div class="grid"></div>
+      <div class="grid"><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div><div class="tile"><img loading="lazy" decoding="async" src="img/placeholders/placeholder.png" alt=""></div></div>
     </div>
   </section>
 
-  <!-- VIDEOS (dinamico) -->
+  <!-- VIDEOS -->
   <section id="videos" class="section">
     <div class="container">
-      <h2 class="section-title">videos</h2>
+      <h2 class="section-title">vídeos</h2>
       <p class="lead">bastidores, processos e resultados.</p>
-      <div id="video-grid" class="video-grid"></div>
-      <p class="lead" style="margin-top:10px">mais no <a class="btn btn-ghost" href="https://instagram.com/tattooateosossos" target="_blank" rel="noopener">instagram</a></p>
+
+      <div id="video-grid" class="video-grid">
+        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/reel/ChGkXrAFC7G/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A0%2C%22os%22%3A3211.5999999940395%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-1" src="https://www.instagram.com/reel/Ca-6FFGJKYV/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A1%2C%22os%22%3A3256.300000011921%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-1" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-2" src="https://www.instagram.com/reel/C147WjAJMBp/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A2%2C%22os%22%3A3319.5999999940395%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-2" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
+      </div>
+
+      <p class="lead" style="margin-top:10px">
+        mais no <a class="btn btn-ghost" href="https://instagram.com/seuuser" target="_blank">Instagram</a>
+      </p>
     </div>
   </section>
 
@@ -276,7 +356,7 @@
     </div>
   </section>
 
-  <!-- FAQs (dinamico) -->
+  <!-- FAQs -->
   <section id="faqs" class="section">
     <div class="container">
       <h2 class="section-title">faqs</h2>
@@ -299,13 +379,13 @@
     <div class="container">
       <h2 class="section-title">orcamento</h2>
       <p class="lead">responda rapidinho e retornamos com valores e datas.</p>
-      <form id="lead-form" class="lead-form" novalidate>
+      <form id="lead-form" class="lead-form" novalidate="">
         <div class="row">
-          <div class="field"><label for="nome">nome</label><input id="nome" name="nome" required><small class="err" data-err="nome"></small></div>
-          <div class="field"><label for="whatsapp">whatsapp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="(11) 99999-9999" required><small class="err" data-err="whatsapp"></small></div>
+          <div class="field"><label for="nome">nome</label><input id="nome" name="nome" required=""><small class="err" data-err="nome"></small></div>
+          <div class="field"><label for="whatsapp">whatsapp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="(11) 99999-9999" required=""><small class="err" data-err="whatsapp"></small></div>
         </div>
         <div class="row">
-          <div class="field"><label for="email">email</label><input id="email" name="email" type="email" required><small class="err" data-err="email"></small></div>
+          <div class="field"><label for="email">email</label><input id="email" name="email" type="email" required=""><small class="err" data-err="email"></small></div>
           <div class="field"><label for="estilo">estilo</label>
             <select id="estilo" name="estilo"><option value="">selecione</option><option>realismo</option><option>blackwork</option><option>fino traco</option><option>exclusivos</option><option>piercing (jennyfer)</option></select>
           </div>
@@ -337,8 +417,7 @@
       <h2 class="section-title">onde estamos</h2>
       <p class="lead"><strong>endereco:</strong> Rua Monsenhor Pio Ragazinskas, 15 — sobreloja — Vila Zelina — Sao Paulo/SP</p>
       <div class="map-wrapper">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.688373193469!2d-46.5800!3d-23.5430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c9b8c6c1b05%3A0x6e3c1a2d99b9a3f3!2sR.%20Monsenhor%20Pio%20Ragazinskas%2C%2015%20-%20Vila%20Zelina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003151-040!5e0!3m2!1spt-BR!2sbr!4v1736061000000!5m2!1spt-BR!2sbr"
-          width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.688373193469!2d-46.5800!3d-23.5430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c9b8c6c1b05%3A0x6e3c1a2d99b9a3f3!2sR.%20Monsenhor%20Pio%20Ragazinskas%2C%2015%20-%20Vila%20Zelina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003151-040!5e0!3m2!1spt-BR!2sbr!4v1736061000000!5m2!1spt-BR!2sbr" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -368,7 +447,10 @@
 
   <!-- BOTAO FLUTUANTE -->
   <a class="fab" href="https://wa.me/5511939369778" target="_blank" rel="noopener" aria-label="abrir whatsapp">
-    <img src="img/logo.png" alt="logo osso">
+  <img src="img/logo/logo-01.png" alt="logo osso">
+</a>
+
+
   </a>
 
   <!-- MODAL ANAMNESE -->
@@ -379,18 +461,18 @@
         <button class="x" id="close-ana">fechar</button>
       </div>
       <p class="lead">preencha com verdade. dados sigilosos para seguranca.</p>
-      <form id="ana" class="lead-form" novalidate>
+      <form id="ana" class="lead-form" novalidate="">
         <div class="row">
-          <div class="field"><label>nome completo</label><input name="nome" required></div>
-          <div class="field"><label>whatsapp</label><input name="whatsapp" id="ana_whats" placeholder="(11) 99999-9999" required></div>
+          <div class="field"><label>nome completo</label><input name="nome" required=""></div>
+          <div class="field"><label>whatsapp</label><input name="whatsapp" id="ana_whats" placeholder="(11) 99999-9999" required=""></div>
         </div>
         <div class="row">
-          <div class="field"><label>email</label><input name="email" type="email" required></div>
-          <div class="field"><label>data de nascimento</label><input name="nascimento" type="date" required></div>
+          <div class="field"><label>email</label><input name="email" type="email" required=""></div>
+          <div class="field"><label>data de nascimento</label><input name="nascimento" type="date" required=""></div>
         </div>
         <div class="row">
           <div class="field"><label>procedimento</label>
-            <select name="procedimento" required><option value="">selecione</option><option>tattoo</option><option>piercing</option></select>
+            <select name="procedimento" required=""><option value="">selecione</option><option>tattoo</option><option>piercing</option></select>
           </div>
           <div class="field"><label>local do corpo</label><input name="local_corpo" placeholder="ex: antebraco, helix, septo"></div>
         </div>
@@ -407,7 +489,7 @@
           <div class="field"><label>fumante?</label><select name="fumante"><option>nao</option><option>sim</option></select></div>
           <div class="field"><label>gravida/amamentando?</label><select name="gestante"><option>nao</option><option>sim</option></select></div>
         </div>
-        <div class="row"><div class="field" style="grid-column:1/-1"><label><input type="checkbox" required> confirmo que li e aceito as orientacoes e politica de atendimento.</label></div></div>
+        <div class="row"><div class="field" style="grid-column:1/-1"><label><input type="checkbox" required=""> confirmo que li e aceito as orientacoes e politica de atendimento.</label></div></div>
         <div class="actions"><button class="btn btn-primary" type="submit" id="ana_enviar">enviar anamnese</button></div>
         <div id="ana_okmsg" class="lead" style="display:none;color:#a2ffcf;margin-top:8px">enviado com sucesso. obrigado!</div>
       </form>
@@ -415,32 +497,46 @@
   </div>
 
   <script src="script.js"></script>
-// tenta .png, .jpg, .webp e usa o primeiro que carregar
-async function trySources(el, bases) {
-  for (const src of bases) {
-    try {
-      const ok = await new Promise(res=>{
-        const i = new Image();
-        i.onload = ()=>res(true);
-        i.onerror = ()=>res(false);
-        i.src = src + (src.includes('?')?'':'') + '';
-      });
-      if (ok) { el.src = src; return true; }
-    } catch {}
-  }
-  return false;
-}
+  <script async="" src="//www.instagram.com/embed.js"></script>
+  <script>window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 
-// aplica nos perfis (ajuste os nomes-base sem extensão)
-(async ()=>{
-  const coringaEl = document.querySelector('img[alt="coringa tatuador"]');
-  if (coringaEl) {
-    await trySources(coringaEl, ["img/coringa.png","img/coringa.jpg","img/coringa.webp"]);
-  }
-  const jennyEl = document.querySelector('img[alt="jennyfer piercer"]');
-  if (jennyEl) {
-    await trySources(jennyEl, ["img/jennyfer.png","img/jennyfer.jpg","img/jennyfer.webp"]);
-  }
-})();
-</body>
-</html>
+
+</body></html>

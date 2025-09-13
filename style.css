@@ -53,7 +53,12 @@ body{
 /* hero */
 .hero{ position:relative; isolation:isolate; min-height:88vh; display:grid; place-items:center; text-align:center; overflow:hidden; }
 .hero-inner{ padding:64px 16px 96px; }
-.hero-logo{ width:min(160px, 40vw); height:auto; object-fit:contain; opacity:.95; filter: drop-shadow(0 8px 24px rgba(0,0,0,.5)); }
+.hero-logo{
+  width: 88%;
+  height: 88%;
+  object-fit: contain;         
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.45));
+}
 .hero-title{ margin:18px 0 8px; }
 .grad-title{
   font-size: clamp(28px, 6vw, 64px);
@@ -68,7 +73,7 @@ body{
   border:1px solid var(--stroke); border-radius:999px; padding:12px 18px;
   text-decoration:none; color:var(--ink); box-shadow:var(--shadow);
   display:inline-flex; align-items:center; justify-content:center;
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  transition: transform .12s ease, background-12s ease, border-color .12s ease;
 }
 .btn:hover{ transform: translateY(-1px); border-color:#3a3f4a; }
 .btn-primary{ background: linear-gradient(90deg, var(--brand-a), var(--brand-b)); color:#131419; border-color:transparent; font-weight:700; }
@@ -156,3 +161,322 @@ body{
 @media (max-width: 460px){
   .grid{ grid-template-columns: 1fr; }
 }
+/* ===== portfolio grid + chips ===== */
+.filter { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 20px; }
+.filter .chip {
+  padding:8px 14px; border:1px solid rgba(255,255,255,.14);
+  background:transparent; color:inherit; border-radius:999px;
+  cursor:pointer; font-size:.95rem;
+}
+.filter .chip.active { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.28); }
+
+.grid {
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+}
+.card-media {
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px; overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.card-media img { width:100%; height:220px; object-fit:cover; display:block; }
+.card-media .caption { padding:10px 12px; font-size:.95rem; opacity:.85; text-transform:lowercase; }
+
+@media (min-width: 640px){
+  .card-media img { height:260px; }
+}
+@media (min-width: 1024px){
+  .card-media img { height:300px; }
+}
+/* normaliza estilização dentro do grid */
+.grid a { color: inherit; text-decoration: none; }
+.card-media .caption { padding: 10px 12px; font-size: .98rem; opacity: .9; }/* Botão "ver portfólio completo" */
+.portfolio-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.portfolio-link .btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-link .btn-primary {
+  background: var(--brand, #ff7a1a);
+  color: #fff;
+  border: none;
+}
+
+.portfolio-link .btn-primary:hover {
+  background: #e66900;
+  transform: scale(1.05);
+}
+/* ==== Botões portfólio por seção ==== */
+#trabalhos .btn-portfolio {
+  background: linear-gradient(90deg, #ff8008, #ff7300); /* laranja */
+}
+
+#piercing .btn-portfolio {
+  background: linear-gradient(90deg, #8e2de2, #4a00e0); /* roxo */
+}
+
+#flash .btn-portfolio {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b); /* rosa/vermelho */
+}
+
+#mockups .btn-portfolio {
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* azul */
+}
+
+/* estilo geral dos botões */
+.btn-portfolio {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.btn-portfolio:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+/* === Destaques: cards quadrados e alinhados === */
+.section #destaques .cards,
+#destaques .cards {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 18px;
+}
+
+.card.cta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card.cta .card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* mantém o “quadradão” responsivo */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.card.cta .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.card.cta .btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* mantém botões coerentes nos cards */
+.card .btn,
+.card .btn-ghost,
+.card .btn-primary {
+  line-height: 1;
+  padding: 10px 14px;
+}
+/* === Ajuste de tamanho dos cards de destaques === */
+#destaques .cards {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* cards menores */
+  gap: 16px; /* espaço entre eles */
+}
+
+#destaques .card.cta {
+  max-width: 260px;       /* limite de largura */
+  margin: 0 auto;         /* centraliza se sobrar espaço */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#destaques .card.cta .card-img {
+  aspect-ratio: 1 / 1;    /* formato quadrado */
+  max-height: 180px;      /* altura menor */
+  object-fit: cover;
+}
+
+#destaques .card.cta .card-body {
+  padding: 10px;
+  gap: 6px;
+}
+
+#destaques .card.cta .card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#destaques .card.cta .card-sub {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+/* ==== GRID PADRÃO (mesmo look de TRABALHOS) ==== */
+:root{
+  --card-gap: 16px;
+  --card-size: 260px; /* ajuste aqui pra deixar menor/maior */
+}
+
+/* === GRID DOS ÁLBUNS (lado a lado) === */
+.section-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 24px;
+}
+
+.card-square {
+  background: var(--card, #16171a);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-square:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.4);
+  border-color: rgba(255,255,255,)
+}
+
+/* “thumb” quadradinha igual em todos */
+.card-square .thumb{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: #0f1012;
+  overflow: hidden;
+}
+.card-square .thumb img{
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+
+.card-square h3{
+  margin: 12px 2px 4px;
+  font-size: 1.06rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.card-square p{
+  margin: 0 2px 12px;
+  font-size: .92rem; color: #bdbdbd;
+}
+
+.card-square .btn-row{
+  margin-top: auto;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+
+/* faz o card inteiro ser clicável, sem quebrar o botão */
+.card-square .stretched{
+  position:absolute; inset:0; border-radius:14px;
+}
+
+/* ===== ÁLBUNS (mockups, sticks, flash, 7arte) ===== */
+#albuns .section-cards {
+  display: grid !important;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+#albuns .card-square {
+  background: var(--card, #16171a);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+#albuns .card-square:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.45);
+}
+
+#albuns .card-square .card-img {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+  background: #0f1012;
+}
+
+#albuns .card-square .card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: .4px;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+#albuns .card-square .card-sub {
+  opacity: .75;
+  font-size: .95rem;
+  margin: 0 0 10px;
+}
+
+#albuns .card-square .btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+#albuns .card-square .btn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .95rem;
+}
+/* --- AJUSTE SÓ O LOGO DO HERO --- */
+ .hero-logo-wrap {
+  width: min(180px, 40vw);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #0f1115;
+  border: 2px solid var(--stroke);
+  box-shadow: var(--shadow);
+  margin: 0 auto 20px; /* centralizar e dar espaço */
+}
+
+.hero-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+

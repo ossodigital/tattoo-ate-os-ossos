@@ -1,12 +1,13 @@
 {
   "name": "tattoo-ate-os-ossos",
   "version": "1.2.0",
-  "description": "Landing page + backend simples para captacao de leads, anamnese, upload de midia",
+  "description": "Landing page + backend simples para captacao de leads, anamnese, upload de mídia",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "generate:portfolio": "node generate-portfolio.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

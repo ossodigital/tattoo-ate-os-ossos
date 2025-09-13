@@ -1,15 +1,109 @@
 {
-  "chips": ["todos", "realismo", "blackwork", "fino-traco", "exclusivos", "digital", "coverup"],
+  "chips": [
+    "todos",
+    "tattoo",
+    "piercing"
+  ],
   "items": [
-    {"src":"img/trabalho-costas.png","alt":"fechamento costas","estilo":"realismo"},
-    {"src":"img/tattoo-pesinho.png","alt":"pesinho","estilo":"fino-traco"},
-    {"src":"img/reforma-depois.png","alt":"reforma depois","estilo":"coverup"},
-    {"src":"img/reforma-antes.png","alt":"reforma antes","estilo":"coverup"},
-    {"src":"img/tattoo-dog.png","alt":"dog","estilo":"realismo"},
-    {"src":"img/fechamento-tattoo.png","alt":"fechamento","estilo":"realismo"},
-    {"src":"img/tattoo-coruja.png","alt":"coruja","estilo":"realismo"},
-    {"src":"img/carpa-digital.png","alt":"carpa digital","estilo":"digital"},
-    {"src":"img/carranca-digital.png","alt":"carranca digital","estilo":"digital"},
-    {"src":"img/logo.png","alt":"marca","estilo":"exclusivos"}
+    {
+      "src": "img/tattoo/portfolio3.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/portifolio1.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/portifolio2.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/portifolio4.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/portrait-filha.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/reforma-antes.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/reforma-depois.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/tattoo-braco-01.png.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/tattoo-coruja-01.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/tattoo-costas-01.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/tattoo-realismo-01.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/tattoo/tiger.png",
+      "alt": "",
+      "estilo": "tattoo"
+    },
+    {
+      "src": "img/piercing/piercing-01.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-02.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-03.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-04.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-05.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-06.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-07.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    },
+    {
+      "src": "img/piercing/piercing-08.png.jpg",
+      "alt": "",
+      "estilo": "piercing"
+    }
   ]
 }

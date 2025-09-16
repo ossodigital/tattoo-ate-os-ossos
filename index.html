@@ -5,7 +5,16 @@
   <meta name="description" content="Tattoo ate os ossos — realismo, blackwork, exclusivos. Piercing com jennyfer. Vila Zelina - Sao Paulo.">
   <link rel="icon" href="img/logo-01.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
-  <style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-346789777">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-346789777');
+</script><style>
     *{box-sizing:border-box} html{scroll-behavior:smooth}
     :root{--bg:#0e0f11;--bg-2:#14161a;--bg-3:#1a1d23;--ink:#e9e9ea;--ink-2:#b9bcc2;--brand-a:#d37430;--brand-b:#ffbf3c;--stroke:#252830;--shadow:0 12px 36px rgba(0,0,0,.35);--radius:16px;--w:min(1180px,92vw)}
     body{margin:0;color:var(--ink);background:
@@ -312,22 +321,89 @@
   </section>
 
   <!-- VIDEOS -->
-  <section id="videos" class="section">
-    <div class="container">
-      <h2 class="section-title">vídeos</h2>
-      <p class="lead">bastidores, processos e resultados.</p>
+ <!-- ======================= VÍDEOS ======================= -->
+<!-- ======================= VÍDEOS (Instagram) ======================= -->
+<section id="videos" class="section">
+  <div class="container">
+    <h2 class="section-title">Bastidores, Processos e Resultados</h2>
+    <p class="lead">Alguns Reels reais do nosso Instagram.</p>
 
-      <div id="video-grid" class="video-grid">
-        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/reel/ChGkXrAFC7G/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A0%2C%22os%22%3A3211.5999999940395%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-1" src="https://www.instagram.com/reel/Ca-6FFGJKYV/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A1%2C%22os%22%3A3256.300000011921%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-1" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-        <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-2" src="https://www.instagram.com/reel/C147WjAJMBp/embed/?cr=1&amp;v=14&amp;wp=345&amp;rd=http%3A%2F%2F127.0.0.1%3A5500&amp;rp=%2Findex.html#%7B%22ci%22%3A2%2C%22os%22%3A3319.5999999940395%2C%22ls%22%3A1705.699999988079%2C%22le%22%3A2479.300000011921%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="686" data-instgrm-payload-id="instagram-media-payload-2" scrolling="no" style="max-width: 540px; width: 100%; background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>
-      </div>
+    <div class="insta-grid">
+      <!-- Reel 1 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/Ca-6FFGJKYV/"
+        data-instgrm-version="14">
+      </blockquote>
 
-      <p class="lead" style="margin-top:10px">
-        mais no <a class="btn btn-ghost" href="https://instagram.com/seuuser" target="_blank">Instagram</a>
-      </p>
+      <!-- Reel 2 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/C147WjAJMBp/"
+        data-instgrm-version="14">
+      </blockquote>
+
+      <!-- Reel 3 -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/ChGkXrAFC7G/"
+        data-instgrm-version="14">
+      </blockquote>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Script oficial do Instagram (deixe ANTES do </body>) -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+<!-- Reprocessa embeddeds (garante render em SPA/atualizações) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
+      window.instgrm.Embeds.process();
+    }
+  });
+</script>
+
+<style>
+  /* ====== ESTILOS DO GRID DO INSTAGRAM ====== */
+
+  /* Contêiner em grid: 3 colunas (PC), 2 (tablet), 1 (cel) */
+  .insta-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 32px auto 0;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 1100px){
+    .insta-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px){
+    .insta-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* O Instagram injeta <blockquote> e controla largura; forçamos 100% da coluna */
+  .insta-grid .instagram-media{
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;            /* evita largura mínima que “estoura” a coluna */
+    margin: 0 auto !important;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Opcional: remove margens internas que o Instagram coloca às vezes */
+  .insta-grid .instagram-media div{
+    margin: 0 !important;
+  }
+</style>
+
+
+<!-- Script oficial do Instagram (deixar antes do </body>) -->
+<script async src="//www.instagram.com/embed.js"></script>
+
 
   <!-- CUIDADOS -->
   <section id="cuidados" class="section section-contained">
